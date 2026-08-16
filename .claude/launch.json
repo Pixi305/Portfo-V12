@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "Portfolio Dev",
-      "runtimeExecutable": "node_modules/.bin/next",
-      "runtimeArgs": ["dev"],
-      "port": 3000
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
