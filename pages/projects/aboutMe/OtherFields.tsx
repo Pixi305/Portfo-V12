@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ToolsSection from "./ToolsSection";
 
 const experiences = [
   { company: "QEDA", role: "Principal Tech & Operations Associate (Design Engineer)", start: "Oct 2024", end: "Present", contractType: "Full-time" },
@@ -19,7 +20,7 @@ export default function OtherFields() {
       </div>
 
       <div>
-        <Image src="/images/tools.png" alt="Tools" width={1920} height={1080} className="w-full h-auto" />
+        <ToolsSection />
       </div>
 
       <section id="experience" className="mt-12 mb-20">
