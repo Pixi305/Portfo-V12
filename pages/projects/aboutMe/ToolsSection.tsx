@@ -36,7 +36,15 @@ type CompositeIcon = {
   layers: { src: string; style: React.CSSProperties }[];
 };
 
-type Tool = SimpleIcon | CompositeIcon;
+type ClippedIcon = {
+  kind: "clipped";
+  src: string;
+  alt: string;
+  containerStyle: React.CSSProperties;
+  imgStyle: React.CSSProperties;
+};
+
+type Tool = SimpleIcon | CompositeIcon | ClippedIcon;
 
 function ToolTile(tool: Tool) {
   return (
@@ -48,6 +56,15 @@ function ToolTile(tool: Tool) {
           alt={tool.alt}
           style={{ position: "absolute", ...tool.imgStyle }}
         />
+      ) : tool.kind === "clipped" ? (
+        <div style={{ position: "absolute", overflow: "hidden", ...tool.containerStyle }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={tool.src}
+            alt={tool.alt}
+            style={{ position: "absolute", ...tool.imgStyle }}
+          />
+        </div>
       ) : (
         <>
           {/* bg — the colored rounded rect */}
@@ -211,13 +228,6 @@ const row2: Tool[] = [
     alt: "LottieFiles",
     imgStyle: s(13, 13, 54),
   },
-  // LottieFiles (alternate)
-  {
-    kind: "simple",
-    src: "/icons/tools/lottie.svg",
-    alt: "LottieFiles",
-    imgStyle: s(13, 13, 54),
-  },
   // ClickUp
   {
     kind: "simple",
@@ -225,11 +235,20 @@ const row2: Tool[] = [
     alt: "ClickUp",
     imgStyle: s(13, 12, 55),
   },
-  // Jira / Linear
+  // Higgsfield — clipped overflow image inside a rounded container
   {
-    kind: "simple",
-    src: "/icons/tools/jira.svg",
-    alt: "Jira",
-    imgStyle: s(13, 5, 55),
+    kind: "clipped",
+    src: "/icons/tools/higgsfield.png",
+    alt: "Higgsfield",
+    containerStyle: { left: 10.81, top: 8.76, width: 60.321, height: 62.487, borderRadius: 14 },
+    imgStyle: { width: 86.44, height: 86.43, left: -13.57, top: -12.32 },
+  },
+  // GSAP — image clipped inside a white rounded inner box
+  {
+    kind: "clipped",
+    src: "/icons/tools/gsap.png",
+    alt: "GSAP",
+    containerStyle: { left: 10.44, top: 10.44, width: 59.121, height: 59.121, borderRadius: 10.948, backgroundColor: "white" },
+    imgStyle: { width: 132.314, height: 69.465, left: -34.16, top: -5.17 },
   },
 ];
