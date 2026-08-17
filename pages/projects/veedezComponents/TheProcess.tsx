@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 import { CategorySlider } from "../../../components/CategorySlider";
 import { TransferSlider } from "../../../components/TransferSlider";
 import { BillSlider } from "../../../components/BillSlider";
@@ -30,13 +31,13 @@ export default function TheProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="container">
-        <Image src="/images/information.png" alt="Information architecture" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/information.png" alt="Information architecture" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="bg-[#FAFAFA] rounded-3xl container">
-        <Image src="/images/wireframe.png" alt="Wireframes" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/wireframe.png" alt="Wireframes" width={1920} height={1080} className="w-full h-auto" />
       </div>
 
       <div className="flex flex-col justify-center px-4 md:px-10 lg:px-20">
@@ -50,7 +51,7 @@ export default function TheProcess() {
         />
       </div>
       <div className="flex flex-col space-y-12">
-        <Image src="/images/welcome_screen.png" alt="Welcome screen" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/welcome_screen.png" alt="Welcome screen" width={1920} height={1080} className="w-full h-auto" />
         <div className="space-y-12">
           <p className="text-center font-bold text-[28px]">2. Create Account</p>
           <CategorySlider />
@@ -78,7 +79,7 @@ export default function TheProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/user-persona.png" alt="User persona" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/user-persona.png" alt="User persona" width={1920} height={1080} className="w-full h-auto" />
       </div>
 
       <Link href={"/projects/faramove"} className="cursor-pointer">

@@ -72,7 +72,7 @@ export default function Footer() {
           </a>
           <a
             className="underline"
-            href="https://drive.google.com/file/d/12hmt5BxyBVE1PNwQadmTcLZAxJDmq_Pe/view?usp=sharing"
+            href="https://drive.google.com/file/d/11tw9-6KGxp4hztLdJQ1ylN-mJlVlpQOX/view?usp=drive_link"
             target="_blank"
             rel="noreferrer noopener"
           >

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ToolsSection from "./ToolsSection";
 
 const experiences = [
   { company: "QEDA", role: "Principal Tech & Operations Associate (Design Engineer)", start: "Oct 2024", end: "Present", contractType: "Full-time" },
@@ -9,7 +10,7 @@ const experiences = [
 
 export default function OtherFields() {
   return (
-    <section className="space-y-12 container px-4 md:px-6 pb-12">
+    <section className="space-y-12 mx-4 md:mx-12 lg:mx-20 pb-12">
       <div className="flex flex-col justify-center mt-10">
         <p className="text-sm font-medium text-center">Mentoring & Membership</p>
         <div className="flex gap-8 md:gap-16 justify-center mt-4">
@@ -19,10 +20,10 @@ export default function OtherFields() {
       </div>
 
       <div>
-        <Image src="/images/tools.png" alt="Tools" width={1920} height={1080} className="w-full h-auto" />
+        <ToolsSection />
       </div>
 
-      <section id="experience" className="mt-12 mb-20">
+      <section id="experience" className="mt-12 mb-20 px-[26px]">
         <h2 className="text-4xl md:text-[55px] font-semibold leading-tight md:leading-[56px] mb-12 md:mb-24 text-center">
           Experiences
         </h2>

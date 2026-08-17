@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 
 export default function AboutFaramove() {
   return (
@@ -68,7 +69,7 @@ export default function AboutFaramove() {
       </section>
 
       <div className="container">
-        <Image src="/images/faracomponent.png" alt="Faramove components" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/faracomponent.png" alt="Faramove components" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="flex flex-col space-y-4 ">
         <div className="px-4 md:px-10 lg:px-20">
@@ -77,7 +78,7 @@ export default function AboutFaramove() {
             subText="These are few brand asset i led the creative on and added my contributions to."
           />
         </div>
-        <Image src="/images/brandAssets.png" alt="Brand assets" width={1920} height={1080} className="container w-full h-auto" />
+        <ShimmerImage src="/images/brandAssets.png" alt="Brand assets" width={1920} height={1080} className="container w-full h-auto" />
       </div>
 
       <section>
@@ -134,7 +135,7 @@ export default function AboutFaramove() {
           />
         </div>
         <div className="my-12">
-          <Image src="/images/farapersons.png" alt="User personas" width={1920} height={1080} className="container w-full h-auto" />
+          <ShimmerImage src="/images/farapersons.png" alt="User personas" width={1920} height={1080} className="container w-full h-auto" />
         </div>
       </section>
       <section>
@@ -152,17 +153,17 @@ export default function AboutFaramove() {
 
       <div className="pt-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 container">
-          <Image className="w-full h-[100px] md:h-[124px] object-contain" src="/images/gig.png" alt="Gig" width={282} height={124} />
-          <Image className="w-full h-[100px] md:h-[124px] object-contain" src="/images/flexport.png" alt="Flexport" width={282} height={124} />
-          <Image className="w-full h-[100px] md:h-[124px] object-contain" src="/images/gokada.png" alt="Gokada" width={282} height={124} />
-          <Image className="w-full h-[100px] md:h-[124px] object-contain" src="/images/speedaf.png" alt="Speedaf" width={282} height={124} />
+          <ShimmerImage className="w-full h-[100px] md:h-[124px] object-contain" src="/images/gig.png" alt="Gig" width={282} height={124} />
+          <ShimmerImage className="w-full h-[100px] md:h-[124px] object-contain" src="/images/flexport.png" alt="Flexport" width={282} height={124} />
+          <ShimmerImage className="w-full h-[100px] md:h-[124px] object-contain" src="/images/gokada.png" alt="Gokada" width={282} height={124} />
+          <ShimmerImage className="w-full h-[100px] md:h-[124px] object-contain" src="/images/speedaf.png" alt="Speedaf" width={282} height={124} />
         </div>
         <p className="text-center mt-6 italic text-[#625D6F]">
           Popular competitors
         </p>
       </div>
       <div className="container">
-        <Image src="/images/swotAnalysis.png" alt="SWOT analysis" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/swotAnalysis.png" alt="SWOT analysis" width={1920} height={1080} className="w-full h-auto" />
       </div>
     </section>
   );

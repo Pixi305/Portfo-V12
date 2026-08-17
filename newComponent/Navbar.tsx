@@ -13,7 +13,7 @@ export default function NavBar() {
           </div>
         </Link>
 
-        <div className="flex gap-3 md:gap-5 ml-auto font-semibold text-black text-sm md:text-base">
+        <div className="flex gap-3 md:gap-5 mx-auto font-semibold text-black text-sm md:text-base">
           <Link href="/">Home</Link>
           <a href={Constants.resumeLink} rel="noreferrer noopener" target="_blank">
             Resume

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 
 export default function JeetarProcess() {
   return (
@@ -17,13 +18,13 @@ export default function JeetarProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="container">
-        <Image src="/images/jeetar-wireframe.png" alt="Wireframes" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/jeetar-wireframe.png" alt="Wireframes" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="bg-[#FAFAFA] rounded-3xl container">
-        <Image src="/images/jeetar-fidelity.png" alt="High fidelity" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/jeetar-fidelity.png" alt="High fidelity" width={1920} height={1080} className="w-full h-auto" />
       </div>
 
       <div className="flex flex-col justify-center px-4 md:px-10 lg:px-20">
@@ -44,7 +45,7 @@ export default function JeetarProcess() {
             <h3 className="text-3xl text-[#16063E] font-bold text-center mb-4">
               {app.title}
             </h3>
-            <Image src={app.image} alt={app.alt} width={1920} height={1080} className="w-full h-auto" />
+            <ShimmerImage src={app.image} alt={app.alt} width={1920} height={1080} className="w-full h-auto" />
           </div>
         ))}
       </div>
@@ -57,7 +58,7 @@ export default function JeetarProcess() {
         />
       </div>
       <div className="m-0 p-0">
-        <Image src="/images/jeetar-feedback.png" alt="Customer feedback" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/jeetar-feedback.png" alt="Customer feedback" width={1920} height={1080} className="w-full h-auto" />
       </div>
 
       <section className="mt-10">
@@ -68,7 +69,7 @@ export default function JeetarProcess() {
             deliver what we promise in minutes."
           />
         </div>
-        <Image
+        <ShimmerImage
           src="/images/jeetar-images.png"
           alt="Delivery photos"
           width={1920}
@@ -80,7 +81,7 @@ export default function JeetarProcess() {
         <div className="px-4 py-12 relative">
           <h1 className="text-[48px] font-medium">Next Project</h1>
           <div className="relative">
-            <Image src="/images/veed.png" alt="Veedez project" width={1920} height={400} className="w-full h-auto" />
+            <ShimmerImage src="/images/veed.png" alt="Veedez project" width={1920} height={400} className="w-full h-auto" />
             <div className="absolute top-1/2 left-0 w-full h-[26px] bg-la-blue/90 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 ease-in-out origin-left -translate-y-1/2"></div>
           </div>
         </div>
