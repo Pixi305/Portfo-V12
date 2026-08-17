@@ -219,8 +219,6 @@ const row2: Tool[] = [
   },
   // LottieFiles
   { kind: "simple", src: "/icons/tools/lottie.svg", alt: "LottieFiles", imgStyle: s(13, 13, 54) },
-  // LottieFiles (second instance per Figma)
-  { kind: "simple", src: "/icons/tools/lottie.svg", alt: "LottieFiles", imgStyle: s(13, 13, 54) },
   // ClickUp
   { kind: "simple", src: "/icons/tools/clickup.svg", alt: "ClickUp", imgStyle: { left: 13, top: 12, width: 54.73, height: 56.209 } },
   // Higgsfield
