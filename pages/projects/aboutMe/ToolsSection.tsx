@@ -5,12 +5,12 @@ export default function ToolsSection() {
         Tools
       </h2>
       <div className="flex flex-col gap-[43px]">
-        <div className="flex flex-wrap gap-[38px]">
+        <div className="flex justify-between">
           {row1.map((tool, i) => (
             <ToolTile key={i} {...tool} />
           ))}
         </div>
-        <div className="flex flex-wrap gap-[38px]">
+        <div className="flex justify-between">
           {row2.map((tool, i) => (
             <ToolTile key={i} {...tool} />
           ))}
