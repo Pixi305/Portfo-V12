@@ -4,7 +4,7 @@ import { AnimatedText } from "../../../newComponent/AnimatedText";
 
 export default function AboutMe() {
   return (
-    <section className="relative mx-4 md:mx-10 lg:mx-14 rounded-[32px] overflow-hidden border border-la-gray4 bg-la-gray4">
+    <section className="relative mx-4 md:mx-12 lg:mx-20 rounded-[32px] overflow-hidden border border-la-gray4 bg-la-gray4">
       <div className="flex flex-col lg:flex-row min-h-[490px]">
         {/* Left content */}
         <div className="flex flex-col text-black py-8 md:py-10 px-5 md:px-10 flex-1">
