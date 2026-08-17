@@ -3,7 +3,7 @@ import { AnimatedText } from "./AnimatedText";
 
 export default function NewHeroSection() {
   return (
-    <section className="container px-4 md:px-6">
+    <section className="mx-4 md:mx-12 lg:mx-20">
       <section className="flex flex-col lg:flex-row justify-between gap-6">
         <div className="flex flex-col text-black p-5 md:p-6 border border-la-gray4 bg-la-gray4 flex-1 rounded-2xl">
           <div className="space-y-4 md:space-y-6">

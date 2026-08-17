@@ -2,7 +2,7 @@ import { AnimatedText } from "../newComponent/AnimatedText";
 
 export const Experience = () => {
   return (
-    <section id="experience" className="mt-12 mb-20 container px-4 md:px-6">
+    <section id="experience" className="mt-12 mb-20 mx-4 md:mx-12 lg:mx-20">
       <h2 className="text-4xl md:text-[55px] font-semibold leading-tight md:leading-[56px] mb-12 md:mb-24 text-center">
         <AnimatedText stagger={0.12}>Experiences</AnimatedText>
       </h2>

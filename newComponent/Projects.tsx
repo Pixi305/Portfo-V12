@@ -5,7 +5,7 @@ import { AnimatedText } from "./AnimatedText";
 export default function Projects() {
   return (
     <section className="mt-12">
-      <h1 className="font-semibold text-4xl md:text-[55px] my-6 text-center px-4 md:px-6">
+      <h1 className="font-semibold text-4xl md:text-[55px] my-6 text-center px-4 md:px-12 lg:px-20">
         <AnimatedText stagger={0.1}>Selected Projects</AnimatedText>
       </h1>
 
