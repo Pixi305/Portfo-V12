@@ -62,7 +62,7 @@ function ToolTile(tool: Tool) {
           <img
             src={tool.src}
             alt={tool.alt}
-            style={{ position: "absolute", ...tool.imgStyle }}
+            style={{ position: "absolute", maxWidth: "none", ...tool.imgStyle }}
           />
         </div>
       ) : (
@@ -235,20 +235,20 @@ const row2: Tool[] = [
     alt: "ClickUp",
     imgStyle: s(13, 12, 55),
   },
-  // Higgsfield — clipped overflow image inside a rounded container
+  // Higgsfield — 768×768 square; crop to center green logo, strip gray outer border
   {
     kind: "clipped",
     src: "/icons/tools/higgsfield.png",
     alt: "Higgsfield",
-    containerStyle: { left: 10.81, top: 8.76, width: 60.321, height: 62.487, borderRadius: 14 },
-    imgStyle: { width: 86.44, height: 86.43, left: -13.57, top: -12.32 },
+    containerStyle: { left: 9.38, top: 9.38, width: 61.236, height: 61.236, borderRadius: 10.206, backgroundColor: "white" },
+    imgStyle: { width: 98.01, height: 98.01, left: -18.96, top: -16.15 },
   },
-  // GSAP — image clipped inside a white rounded inner box
+  // GSAP — 2400×1260; crop 700×700 centered on logo at ~(1120,820) in source
   {
     kind: "clipped",
     src: "/icons/tools/gsap.png",
     alt: "GSAP",
     containerStyle: { left: 10.44, top: 10.44, width: 59.121, height: 59.121, borderRadius: 10.948, backgroundColor: "white" },
-    imgStyle: { width: 132.314, height: 69.465, left: -34.16, top: -5.17 },
+    imgStyle: { width: 202.8, height: 106.5, left: -64.8, top: -39.5 },
   },
 ];
