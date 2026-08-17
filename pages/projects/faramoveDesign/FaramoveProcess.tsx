@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 
 export default function FaramoveProcess() {
   return (
@@ -26,13 +27,13 @@ export default function FaramoveProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/our-process.png" alt="Our process" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="container">
-        <Image src="/images/information.png" alt="Information architecture" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/information.png" alt="Information architecture" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="bg-[#FAFAFA] rounded-3xl container">
-        <Image src="/images/wireframesketch.png" alt="Wireframe sketches" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/wireframesketch.png" alt="Wireframe sketches" width={1920} height={1080} className="w-full h-auto" />
       </div>
 
       <div className="flex flex-col justify-center px-4 md:px-10 lg:px-20">
@@ -48,12 +49,12 @@ export default function FaramoveProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/iteration.png" alt="Design iteration" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/iteration.png" alt="Design iteration" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-10 container">
         {designSteps.map((step, index) => (
           <div key={index}>
-            <Image
+            <ShimmerImage
               src={`/images/${step.image}.png`}
               alt={step.image}
               width={960}
@@ -69,7 +70,7 @@ export default function FaramoveProcess() {
             <h3 className="text-3xl text-[#16063E] font-bold text-center mb-4">
               {app.title}
             </h3>
-            <Image src={app.image} alt={app.alt} width={1920} height={1080} className="w-full h-auto" />
+            <ShimmerImage src={app.image} alt={app.alt} width={1920} height={1080} className="w-full h-auto" />
           </div>
         ))}
       </div>
@@ -83,13 +84,13 @@ export default function FaramoveProcess() {
         />
       </div>
       <div className="container">
-        <Image src="/images/farapersona.png" alt="User persona" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/farapersona.png" alt="User persona" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <Link href={"/projects/jeetar"} className="cursor-pointer">
         <div className="px-4 py-16 relative">
           <h1 className="text-[48px] font-medium">Next Project</h1>
           <div className="relative">
-            <Image src="/images/jeet.png" alt="Jeetar project" width={1920} height={400} className="w-full h-auto" />
+            <ShimmerImage src="/images/jeet.png" alt="Jeetar project" width={1920} height={400} className="w-full h-auto" />
             <div className="absolute top-1/2 left-0 w-full h-[26px] bg-la-blue/90 scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 ease-in-out origin-left -translate-y-1/2"></div>
           </div>
         </div>

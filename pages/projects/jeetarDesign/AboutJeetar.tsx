@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 
 export default function AboutJeetar() {
   return (
@@ -74,7 +75,7 @@ export default function AboutJeetar() {
             colors met accessibility standards."
           />
         </div>
-        <Image
+        <ShimmerImage
           src="/images/jeetar-brand-identity.png"
           alt="Jeetar brand identity"
           width={1920}
@@ -141,12 +142,12 @@ export default function AboutJeetar() {
           </p>
         </div>
         <div className="mt-8 container">
-          <Image src="/images/competitor.png" alt="Competitor analysis" width={1920} height={1080} className="w-full h-auto" />
+          <ShimmerImage src="/images/competitor.png" alt="Competitor analysis" width={1920} height={1080} className="w-full h-auto" />
         </div>
       </section>
 
       <div className="container">
-        <Image src="/images/swot-analysis.png" alt="SWOT analysis" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/swot-analysis.png" alt="SWOT analysis" width={1920} height={1080} className="w-full h-auto" />
       </div>
     </section>
   );

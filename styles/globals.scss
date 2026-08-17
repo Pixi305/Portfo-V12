@@ -109,4 +109,15 @@ body {
       @apply bg-[#2D2D2D] text-white text-lg font-extrabold px-7 py-2.5 title rounded-[9px];
     }
   }
+
+@keyframes shimmer {
+  0% { background-position: -800px 0; }
+  100% { background-position: 800px 0; }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
   

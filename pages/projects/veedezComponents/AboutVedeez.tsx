@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShimmerImage from "@/newComponent/ShimmerImage";
 
 export default function AboutVeedez() {
   return (
@@ -75,7 +76,7 @@ export default function AboutVeedez() {
         </div>
       </section>
       <div className="pb-6 container">
-        <Image src="/images/veedezcomp.png" alt="Veedez components" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/veedezcomp.png" alt="Veedez components" width={1920} height={1080} className="w-full h-auto" />
       </div>
       <section>
         <div className="px-4 md:px-10 lg:px-20 mt-10 mb-8">
@@ -98,7 +99,7 @@ export default function AboutVeedez() {
         </div>
       </section>
       <div className="container">
-        <Image src="/images/pain-point.png" alt="Pain points" width={1920} height={1080} className="w-full h-auto" />
+        <ShimmerImage src="/images/pain-point.png" alt="Pain points" width={1920} height={1080} className="w-full h-auto" />
       </div>
     </section>
   );
