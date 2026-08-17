@@ -10,7 +10,7 @@ const experiences = [
 
 export default function OtherFields() {
   return (
-    <section className="space-y-12 container px-4 md:px-6 pb-12">
+    <section className="space-y-12 mx-4 md:mx-10 lg:mx-14 pb-12">
       <div className="flex flex-col justify-center mt-10">
         <p className="text-sm font-medium text-center">Mentoring & Membership</p>
         <div className="flex gap-8 md:gap-16 justify-center mt-4">
