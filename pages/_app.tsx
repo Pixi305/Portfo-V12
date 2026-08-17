@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import CustomCursor from "../newComponent/CustomCursor";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Abdul Lateef</title>
         <link rel="icon" href="/images/logo.svg" />
       </Head>
+      <CustomCursor />
       <Component {...pageProps} />
     </main>
   );

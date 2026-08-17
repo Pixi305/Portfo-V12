@@ -120,4 +120,11 @@ body {
   background-size: 800px 100%;
   animation: shimmer 1.4s infinite linear;
 }
+
+@keyframes cursorBlob {
+  0%   { rotate: 0deg;   scale: 1 1; }
+  25%  {                 scale: 1 1.25; }
+  75%  {                 scale: 1.25 1.25; }
+  100% { rotate: 360deg; scale: 1 1; }
+}
   
