@@ -243,12 +243,12 @@ const row2: Tool[] = [
     containerStyle: { left: 9.38, top: 9.38, width: 61.236, height: 61.236, borderRadius: 10.206, backgroundColor: "white" },
     imgStyle: { width: 98.01, height: 98.01, left: -18.96, top: -16.15 },
   },
-  // GSAP — 2400×1260; crop 700×700 centered on logo at ~(1120,820) in source
+  // GSAP — 2400×1260; Figma % values: w=223.8%, h=117.5%, left=-57.79%, top=-8.75%
   {
     kind: "clipped",
     src: "/icons/tools/gsap.png",
     alt: "GSAP",
-    containerStyle: { left: 10.44, top: 10.44, width: 59.121, height: 59.121, borderRadius: 10.948, backgroundColor: "white" },
-    imgStyle: { width: 202.8, height: 106.5, left: -64.8, top: -39.5 },
+    containerStyle: { left: 10.44, top: 10.44, width: 59.121, height: 59.121, borderRadius: 10 },
+    imgStyle: { width: 132.28, height: 69.47, left: -34.17, top: -5.17 },
   },
 ];
