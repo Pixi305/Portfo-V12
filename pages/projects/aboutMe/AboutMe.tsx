@@ -47,13 +47,13 @@ export default function AboutMe() {
         </div>
 
         {/* Right image panel — fills card height on desktop */}
-        <div className="relative w-full h-72 lg:h-auto lg:w-[443px] lg:flex-shrink-0">
+        <div className="relative w-full h-[420px] lg:h-auto lg:w-[443px] lg:flex-shrink-0">
           <Image
             src="/images/profile.png"
             alt="Lateef Akinyemi"
             fill
             priority
-            className="object-cover object-top"
+            className="object-cover object-center lg:object-top"
           />
         </div>
       </div>

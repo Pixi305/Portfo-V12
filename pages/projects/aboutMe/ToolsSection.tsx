@@ -4,7 +4,16 @@ export default function ToolsSection() {
       <h2 className="font-semibold text-[40px] tracking-[-2px] mb-[30px] text-black title">
         Tools
       </h2>
-      <div className="flex flex-col gap-[43px]">
+
+      {/* Mobile: 4-column grid — all icons, tiles fill their cell */}
+      <div className="grid grid-cols-4 gap-3 lg:hidden">
+        {[...row1, ...row2].map((tool, i) => (
+          <MobileTile key={i} tool={tool} />
+        ))}
+      </div>
+
+      {/* Desktop: 2 fixed-size flex rows */}
+      <div className="hidden lg:flex flex-col gap-[43px]">
         <div className="flex gap-[38px]">
           {row1.map((tool, i) => (
             <ToolTile key={i} {...tool} />
@@ -45,6 +54,38 @@ type ClippedIcon = {
 };
 
 type Tool = SimpleIcon | CompositeIcon | ClippedIcon;
+
+function TileInner({ tool }: { tool: Tool }) {
+  if (tool.kind === "simple") return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={tool.src} alt={tool.alt} style={{ position: "absolute", ...tool.imgStyle }} />
+  );
+  if (tool.kind === "clipped") return (
+    <div style={{ position: "absolute", overflow: "hidden", ...tool.containerStyle }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={tool.src} alt={tool.alt} style={{ position: "absolute", maxWidth: "none", ...tool.imgStyle }} />
+    </div>
+  );
+  return (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={tool.bg} alt="" aria-hidden style={{ position: "absolute", left: 13, top: 13, width: 54, height: 53 }} />
+      {tool.layers.map((layer, i) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img key={i} src={layer.src} alt={i === 0 ? tool.alt : ""} aria-hidden={i > 0} style={{ position: "absolute", ...layer.style }} />
+      ))}
+    </>
+  );
+}
+
+// Mobile tile: fills grid cell (aspect-square), inner images designed for 80px are slightly clipped
+function MobileTile({ tool }: { tool: Tool }) {
+  return (
+    <div className="relative aspect-square bg-[#ededed] rounded-[16px] overflow-hidden">
+      <TileInner tool={tool} />
+    </div>
+  );
+}
 
 function ToolTile(tool: Tool) {
   return (
