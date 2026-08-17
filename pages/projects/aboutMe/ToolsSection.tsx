@@ -1,7 +1,7 @@
 export default function ToolsSection() {
   return (
-    <div className="bg-[#f8f8f8] rounded-[31px] overflow-hidden px-8 pt-10 pb-14">
-      <h2 className="font-semibold text-[40px] tracking-[-2px] mb-10 text-black title">
+    <div className="bg-[#f8f8f8] rounded-[31px] overflow-hidden px-[26px] pt-10 pb-14">
+      <h2 className="font-semibold text-[40px] tracking-[-2px] mb-[30px] text-black title">
         Tools
       </h2>
       <div className="flex flex-col gap-[43px]">
@@ -67,7 +67,6 @@ function ToolTile(tool: Tool) {
         </div>
       ) : (
         <>
-          {/* bg — the colored rounded rect */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={tool.bg}
@@ -75,7 +74,6 @@ function ToolTile(tool: Tool) {
             aria-hidden
             style={{ position: "absolute", left: 13, top: 13, width: 54, height: 53 }}
           />
-          {/* logo layers */}
           {tool.layers.map((layer, i) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -92,13 +90,10 @@ function ToolTile(tool: Tool) {
   );
 }
 
-/* ── Tool data ──────────────────────────────────────── */
+/* ── Helpers ────────────────────────────────────────── */
 
 const s = (left: number, top: number, size: number): React.CSSProperties => ({
-  left,
-  top,
-  width: size,
-  height: size,
+  left, top, width: size, height: size,
 });
 
 const centered = (size: number): React.CSSProperties => ({
@@ -108,9 +103,7 @@ const centered = (size: number): React.CSSProperties => ({
   height: size,
 });
 
-// Adobe composite icon helper
-// bg is placed at left=13 top=13 w=54 h=53 within the 80×80 tile.
-// Logo insets are % of that 54×53 bg area.
+// Adobe composite: bg rect at left=13 top=13 w=54 h=53; logo insets are % of that area
 function adobeLayers(
   bgSrc: string,
   layers: { src: string; tInset: number; rInset: number; bInset: number; lInset: number }[]
@@ -118,67 +111,36 @@ function adobeLayers(
   const bgW = 54, bgH = 53, bgL = 13, bgT = 13;
   return {
     bg: bgSrc,
-    layers: layers.map(({ src, tInset, rInset, bInset, lInset }) => {
-      const left = bgL + bgW * (lInset / 100);
-      const top = bgT + bgH * (tInset / 100);
-      const width = bgW * (1 - lInset / 100 - rInset / 100);
-      const height = bgH * (1 - tInset / 100 - bInset / 100);
-      return { src, style: { left, top, width, height } };
-    }),
+    layers: layers.map(({ src, tInset, rInset, bInset, lInset }) => ({
+      src,
+      style: {
+        left: bgL + bgW * (lInset / 100),
+        top: bgT + bgH * (tInset / 100),
+        width: bgW * (1 - lInset / 100 - rInset / 100),
+        height: bgH * (1 - tInset / 100 - bInset / 100),
+      },
+    })),
   };
 }
 
+/* ── Tool data ──────────────────────────────────────── */
+
 const row1: Tool[] = [
   // Figma
-  {
-    kind: "simple",
-    src: "/icons/tools/figma.svg",
-    alt: "Figma",
-    imgStyle: { left: 23, top: 14, width: 34, height: 51 },
-  },
+  { kind: "simple", src: "/icons/tools/figma.svg", alt: "Figma", imgStyle: { left: 23, top: 14, width: 34, height: 51 } },
   // Claude
-  {
-    kind: "simple",
-    src: "/icons/tools/claude.png",
-    alt: "Claude",
-    imgStyle: centered(61),
-  },
+  { kind: "simple", src: "/icons/tools/claude.png", alt: "Claude", imgStyle: centered(60.711) },
   // GitHub
-  {
-    kind: "simple",
-    src: "/icons/tools/github.png",
-    alt: "GitHub",
-    imgStyle: centered(59),
-  },
-  // Linear
-  {
-    kind: "simple",
-    src: "/icons/tools/linear.png",
-    alt: "Linear",
-    imgStyle: s(10, 11, 60),
-  },
+  { kind: "simple", src: "/icons/tools/github.png", alt: "GitHub", imgStyle: centered(59.146) },
+  // Cursor
+  { kind: "simple", src: "/icons/tools/cursor.png", alt: "Cursor", imgStyle: s(9.75, 11.14, 60.504) },
   // ChatGPT
-  {
-    kind: "simple",
-    src: "/icons/tools/chatgpt.png",
-    alt: "ChatGPT",
-    imgStyle: s(13, 13, 55),
-  },
-  // Terminal / SSH
-  {
-    kind: "simple",
-    src: "/icons/tools/terminal.png",
-    alt: "Terminal",
-    imgStyle: s(3, 3, 73),
-  },
+  { kind: "simple", src: "/icons/tools/chatgpt.png", alt: "ChatGPT", imgStyle: s(12.75, 12.75, 54.5) },
+  // Codex
+  { kind: "simple", src: "/icons/tools/codex.png", alt: "Codex", imgStyle: s(3.43, 3.43, 73.148) },
   // VS Code
-  {
-    kind: "simple",
-    src: "/icons/tools/vscode.png",
-    alt: "VS Code",
-    imgStyle: s(12, 12, 56),
-  },
-  // Illustrator
+  { kind: "simple", src: "/icons/tools/vscode.png", alt: "VS Code", imgStyle: s(12.02, 12.02, 55.967) },
+  // Adobe Illustrator
   {
     kind: "composite",
     alt: "Illustrator",
@@ -186,7 +148,7 @@ const row1: Tool[] = [
       { src: "/icons/tools/ai-logo.svg", tInset: 22.18, rInset: 24, bInset: 29.32, lInset: 20.66 },
     ]),
   },
-  // Photoshop
+  // Adobe Photoshop
   {
     kind: "composite",
     alt: "Photoshop",
@@ -195,7 +157,7 @@ const row1: Tool[] = [
       { src: "/icons/tools/ps-text.svg", tInset: 8.64 + 43.85 * 0.3329 / 53 * 100, rInset: 9.67 + 43.55 * 0.2691 / 54 * 100, bInset: 8.63 + 43.85 * 0.3406 / 53 * 100, lInset: 9.68 + 43.55 * 0.305 / 54 * 100 },
     ]),
   },
-  // After Effects
+  // Adobe After Effects
   {
     kind: "composite",
     alt: "After Effects",
@@ -203,7 +165,10 @@ const row1: Tool[] = [
       { src: "/icons/tools/ae-logo.svg", tInset: 25.72, rInset: 14.25, bInset: 28.63, lInset: 12.37 },
     ]),
   },
-  // Lightroom
+];
+
+const row2: Tool[] = [
+  // Adobe Lightroom
   {
     kind: "composite",
     alt: "Lightroom",
@@ -211,31 +176,13 @@ const row1: Tool[] = [
       { src: "/icons/tools/lr-logo.svg", tInset: 25.64, rInset: 20.8, bInset: 29.3, lInset: 25.4 },
     ]),
   },
-];
-
-const row2: Tool[] = [
-  // Notion
-  {
-    kind: "simple",
-    src: "/icons/tools/notion.svg",
-    alt: "Notion",
-    imgStyle: s(13, 13, 55),
-  },
   // LottieFiles
-  {
-    kind: "simple",
-    src: "/icons/tools/lottie.svg",
-    alt: "LottieFiles",
-    imgStyle: s(13, 13, 54),
-  },
+  { kind: "simple", src: "/icons/tools/lottie.svg", alt: "LottieFiles", imgStyle: s(13, 13, 54) },
+  // LottieFiles (second instance per Figma)
+  { kind: "simple", src: "/icons/tools/lottie.svg", alt: "LottieFiles", imgStyle: s(13, 13, 54) },
   // ClickUp
-  {
-    kind: "simple",
-    src: "/icons/tools/clickup.svg",
-    alt: "ClickUp",
-    imgStyle: s(13, 12, 55),
-  },
-  // Higgsfield — 768×768 square; crop to center green logo, strip gray outer border
+  { kind: "simple", src: "/icons/tools/clickup.svg", alt: "ClickUp", imgStyle: { left: 13, top: 12, width: 54.73, height: 56.209 } },
+  // Higgsfield
   {
     kind: "clipped",
     src: "/icons/tools/higgsfield.png",
@@ -243,7 +190,7 @@ const row2: Tool[] = [
     containerStyle: { left: 9.38, top: 9.38, width: 61.236, height: 61.236, borderRadius: 10.206, backgroundColor: "white" },
     imgStyle: { width: 98.01, height: 98.01, left: -18.96, top: -16.15 },
   },
-  // GSAP — 2400×1260; Figma % values: w=223.8%, h=117.5%, left=-57.79%, top=-8.75%
+  // GSAP
   {
     kind: "clipped",
     src: "/icons/tools/gsap.png",
