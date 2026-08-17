@@ -23,7 +23,7 @@ export default function OtherFields() {
         <ToolsSection />
       </div>
 
-      <section id="experience" className="mt-12 mb-20">
+      <section id="experience" className="mt-12 mb-20 px-[26px]">
         <h2 className="text-4xl md:text-[55px] font-semibold leading-tight md:leading-[56px] mb-12 md:mb-24 text-center">
           Experiences
         </h2>
