@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Constants } from "../constants";
+import { AuroraBackground } from "./AuroraBackground";
 
 function playKeyClick() {
   try {
@@ -67,15 +68,12 @@ export default function IntroScreen({ onEnter }: IntroScreenProps) {
         position: "fixed",
         inset: 0,
         zIndex: 9998,
-        background: "#ffffff",
         opacity: fading ? 0 : 1,
         transition: "opacity 0.75s ease-in-out",
         pointerEvents: fading ? "none" : "auto",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
       }}
     >
+    <AuroraBackground className="flex flex-col items-center h-full overflow-auto">
       {/* ── Profile ── */}
       <div className="flex flex-col items-center gap-[6px] mt-[72px]">
         {/* Avatar */}
@@ -171,6 +169,7 @@ export default function IntroScreen({ onEnter }: IntroScreenProps) {
 
       {/* ── Copyright ── */}
       <p className="text-[12px] text-[#202123] opacity-60 pb-3">©2026 Lateef Akinyemi</p>
+    </AuroraBackground>
     </div>
   );
 }
