@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatedText } from "./AnimatedText";
+import { Constants } from "../constants";
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState<string>("");
@@ -64,7 +65,7 @@ export default function Footer() {
         <div className="flex gap-4 md:gap-10 mt-4 md:mt-0">
           <a
             className="underline"
-            href="https://www.linkedin.com/in/abdullateef-akinyemi"
+            href={Constants.linkedinLink}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -72,7 +73,7 @@ export default function Footer() {
           </a>
           <a
             className="underline"
-            href="https://drive.google.com/file/d/11tw9-6KGxp4hztLdJQ1ylN-mJlVlpQOX/view?usp=drive_link"
+            href={Constants.resumeLink}
             target="_blank"
             rel="noreferrer noopener"
           >

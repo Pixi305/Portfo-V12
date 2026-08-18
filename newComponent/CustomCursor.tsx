@@ -22,7 +22,7 @@ export default function CustomCursor() {
       ref={cursorRef}
       style={{
         position: "fixed",
-        zIndex: 1,
+        zIndex: 99999,
         width: 250,
         height: 250,
         left: 0,
