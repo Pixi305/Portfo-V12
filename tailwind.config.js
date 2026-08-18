@@ -11,6 +11,15 @@ module.exports = {
       screens: {
         mbl: { max: "740px" },
       },
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
+      keyframes: {
+        aurora: {
+          from: { backgroundPosition: "50% 50%, 50% 50%" },
+          to: { backgroundPosition: "350% 50%, 350% 50%" },
+        },
+      },
       colors:{
         "off-white": "#5A5A5A",
         "gray":"#F8F8F8",
