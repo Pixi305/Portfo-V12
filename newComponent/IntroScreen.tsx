@@ -389,47 +389,50 @@ export default function IntroScreen({ onEnter }: { onEnter: () => void }) {
     }}>
       <AuroraBackground className="flex flex-col items-center h-full overflow-auto">
         <KbProvider onEnter={handleEnter}>
-          <div className="flex flex-col items-center w-full min-h-full">
+          <div className="flex flex-col items-center w-full h-full">
 
-            {/* Top content group */}
-            <div className="flex flex-col items-center w-full">
+            {/* Profile + Keyboard + CTA — centred as one unit */}
+            <div className="flex-1 flex flex-col items-center justify-center w-full gap-6 md:gap-8 px-2 py-8">
 
-            {/* Profile */}
-            <div className="flex flex-col items-center gap-[6px] mt-[72px]">
-              <div style={{ width: 100, height: 100, borderRadius: "50%", overflow: "hidden", border: "1px solid #f3f3f3", flexShrink: 0, position: "relative" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/intro-headshot.png" alt="Pixi"
-                  style={{ position: "absolute", top: "-8.26%", left: 0, width: "99.91%", height: "144.52%", maxWidth: "none", objectFit: "cover" }} />
+              {/* Profile */}
+              <div className="flex flex-col items-center gap-[6px]">
+                <div style={{ width: 100, height: 100, borderRadius: "50%", overflow: "hidden", border: "1px solid #f3f3f3", flexShrink: 0, position: "relative" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/intro-headshot.png" alt="Pixi"
+                    style={{ position: "absolute", top: "-8.26%", left: 0, width: "99.91%", height: "144.52%", maxWidth: "none", objectFit: "cover" }} />
+                </div>
+                <p className="font-bold text-[#202123] text-[20px] text-center leading-[1.2]">Pixi</p>
+                <p className="text-[#202123] text-[16px] text-center leading-[1.2]">Senior Product Designer / Design Engineer</p>
               </div>
-              <p className="font-bold text-[#202123] text-[20px] text-center leading-[1.2]">Pixi</p>
-              <p className="text-[#202123] text-[16px] text-center leading-[1.2]">Senior Product Designer / Design Engineer</p>
+
+              {/* Keyboard */}
+              <div className="flex items-center justify-center w-full overflow-hidden">
+                <div className="[zoom:0.52] sm:[zoom:0.72] md:[zoom:1.0] lg:[zoom:1.3] xl:[zoom:1.6]">
+                  <Keypad onEnter={handleEnter} />
+                </div>
+              </div>
+
+              {/* CTA — below keyboard per Figma */}
+              <p className="text-[#202123] text-[16px] md:text-[20px] text-center">
+                Please Click <strong>&ldquo;Enter&rdquo;</strong>
+              </p>
+
             </div>
 
-            {/* CTA */}
-            <p className="text-[#202123] text-[20px] text-center mt-[40px]">
-              Please Click <strong>&ldquo;Enter&rdquo;</strong>
-            </p>
-
-            {/* Keyboard — responsive zoom via Tailwind breakpoints */}
-            <div className="flex items-center justify-center w-full overflow-hidden mt-6 mb-4">
-              <div className="[zoom:0.68] sm:[zoom:1.0] md:[zoom:1.35] lg:[zoom:1.65] xl:[zoom:1.9]">
-                <Keypad onEnter={handleEnter} />
+            {/* Footer — matches homepage footer layout */}
+            <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-32 pb-6 pt-4 gap-2 md:gap-0"
+              style={{ color: "#202123", letterSpacing: "-0.03em" }}>
+              <span className="text-sm md:text-base lg:text-lg" style={{ fontVariantNumeric: "tabular-nums" }}>
+                Lagos, NG&nbsp;&nbsp;|&nbsp;&nbsp;{time}
+              </span>
+              <div className="flex gap-4 md:gap-10">
+                <a href="https://www.linkedin.com/in/abdullateef-akinyemi/" target="_blank" rel="noreferrer noopener"
+                  className="underline text-sm md:text-base lg:text-lg">LinkedIn</a>
+                <a href={Constants.resumeLink} target="_blank" rel="noreferrer noopener"
+                  className="underline text-sm md:text-base lg:text-lg">CV</a>
               </div>
             </div>
 
-
-            </div>{/* end top content group */}
-
-            {/* Footer */}
-            <div className="mt-8 w-full flex items-center justify-between px-16 pb-6 pt-4"
-              style={{ fontSize: "15px", color: "#202123", letterSpacing: "-0.03em" }}>
-              <span style={{ fontVariantNumeric: "tabular-nums" }}>Lagos, NG&nbsp;&nbsp;|&nbsp;&nbsp;{time}</span>
-              <div className="flex gap-8">
-                <a href="https://www.linkedin.com/in/abdullateef-akinyemi/" target="_blank" rel="noreferrer noopener" className="underline">LinkedIn</a>
-                <a href={Constants.resumeLink} target="_blank" rel="noreferrer noopener" className="underline">CV</a>
-              </div>
-            </div>
-            <p className="text-[12px] text-[#202123] opacity-60 pb-3">©2026 Lateef Akinyemi</p>
           </div>
         </KbProvider>
       </AuroraBackground>
