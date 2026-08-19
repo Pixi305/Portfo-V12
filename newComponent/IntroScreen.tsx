@@ -392,45 +392,46 @@ export default function IntroScreen({ onEnter }: { onEnter: () => void }) {
           <div className="flex flex-col items-center w-full h-full">
 
             {/* Profile + Keyboard + CTA — centred as one unit */}
-            <div className="flex-1 flex flex-col items-center justify-center w-full gap-6 md:gap-8 px-2 py-8">
+            <div className="flex-1 flex flex-col items-center justify-center w-full gap-4 md:gap-6 lg:gap-8 px-2 py-6">
 
               {/* Profile */}
               <div className="flex flex-col items-center gap-[6px]">
-                <div style={{ width: 100, height: 100, borderRadius: "50%", overflow: "hidden", border: "1px solid #f3f3f3", flexShrink: 0, position: "relative" }}>
+                <div className="w-[82px] h-[82px] md:w-[100px] md:h-[100px]"
+                  style={{ borderRadius: "50%", overflow: "hidden", border: "1px solid #f3f3f3", flexShrink: 0, position: "relative" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/intro-headshot.png" alt="Pixi"
                     style={{ position: "absolute", top: "-8.26%", left: 0, width: "99.91%", height: "144.52%", maxWidth: "none", objectFit: "cover" }} />
                 </div>
-                <p className="font-bold text-[#202123] text-[20px] text-center leading-[1.2]">Pixi</p>
-                <p className="text-[#202123] text-[16px] text-center leading-[1.2]">Senior Product Designer / Design Engineer</p>
+                <p className="font-bold text-[#202123] text-[16px] md:text-[20px] text-center leading-[1.2]">Pixi</p>
+                <p className="text-[#202123] text-[14px] md:text-[16px] text-center leading-[1.2]">Senior Product Designer / Design Engineer</p>
               </div>
 
               {/* Keyboard */}
               <div className="flex items-center justify-center w-full overflow-hidden">
-                <div className="[zoom:0.52] sm:[zoom:0.72] md:[zoom:1.0] lg:[zoom:1.3] xl:[zoom:1.6]">
+                <div className="[zoom:0.84] sm:[zoom:1.2] md:[zoom:1.45] lg:[zoom:1.8] xl:[zoom:2.1] 2xl:[zoom:2.4]">
                   <Keypad onEnter={handleEnter} />
                 </div>
               </div>
 
               {/* CTA — below keyboard per Figma */}
-              <p className="text-[#202123] text-[16px] md:text-[20px] text-center">
+              <p className="text-[#202123] text-[14px] md:text-[20px] text-center">
                 Please Click <strong>&ldquo;Enter&rdquo;</strong>
               </p>
 
             </div>
 
-            {/* Footer — matches homepage footer layout */}
-            <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-32 pb-6 pt-4 gap-2 md:gap-0"
+            {/* Footer — mobile: links on top, time below; desktop: time left, links right */}
+            <div className="w-full flex flex-col md:flex-row items-center md:justify-between px-4 md:px-10 lg:px-32 pb-6 pt-4 gap-1 md:gap-0"
               style={{ color: "#202123", letterSpacing: "-0.03em" }}>
-              <span className="text-sm md:text-base lg:text-lg" style={{ fontVariantNumeric: "tabular-nums" }}>
-                Lagos, NG&nbsp;&nbsp;|&nbsp;&nbsp;{time}
-              </span>
-              <div className="flex gap-4 md:gap-10">
+              <div className="flex gap-6 md:gap-10 order-1 md:order-2">
                 <a href="https://www.linkedin.com/in/abdullateef-akinyemi/" target="_blank" rel="noreferrer noopener"
                   className="underline text-sm md:text-base lg:text-lg">LinkedIn</a>
                 <a href={Constants.resumeLink} target="_blank" rel="noreferrer noopener"
                   className="underline text-sm md:text-base lg:text-lg">CV</a>
               </div>
+              <span className="text-sm md:text-base lg:text-lg order-2 md:order-1" style={{ fontVariantNumeric: "tabular-nums" }}>
+                Lagos, NG&nbsp;&nbsp;|&nbsp;&nbsp;{time}
+              </span>
             </div>
 
           </div>
