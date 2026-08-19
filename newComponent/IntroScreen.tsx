@@ -414,7 +414,7 @@ export default function IntroScreen({ onEnter }: { onEnter: () => void }) {
               </div>
 
               {/* CTA — below keyboard per Figma */}
-              <p className="text-[#202123] text-[14px] md:text-[20px] text-center">
+              <p className="text-[#202123] text-[16px] md:text-[20px] lg:text-[24px] text-center">
                 Please Click <strong>&ldquo;Enter&rdquo;</strong>
               </p>
 
