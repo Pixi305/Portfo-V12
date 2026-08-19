@@ -31,6 +31,8 @@
     "components/MotionSlider.jsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "components/ui",
+    "new-flow"
   ]
 }
